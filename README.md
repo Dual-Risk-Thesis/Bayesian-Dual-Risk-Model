@@ -17,13 +17,19 @@ The thesis studies Bayesian estimation of the ultimate ruin probability in the c
 The study is based on simulated data from a compound Poisson dual risk model with exponentially distributed gain sizes.
 
 ## Running the analysis
-Run the scripts from the repository root directory. The main analysis scripts should be executed in the following order:
+Run the scripts from the repository root directory. The analysis requires R and the following R packages:
+```r
+install.packages(c("ggplot2", "dplyr", "posterior", "tidyr"))
+```
+The packages only need to be installed once. After installation, run the main analysis scripts in the following order:
 ```r
 source("01_simulation.R")
 source("03_run_results_conditional_psi.R")
 source("04_prior_sensitivity.R")
 source("05_model_misspecification.R")
 ```
+
+The scripts create the required data and result folders automatically when they are run from the repository root directory.
 
 The scripts have the following roles:
 1. `01_simulation.R` simulates the sparse-information and rich-information datasets used in the thesis.
